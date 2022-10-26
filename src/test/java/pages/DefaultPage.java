@@ -8,12 +8,12 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class DefaultPage {
 
-    public void openPage(){
+    public void openPage() {
         open("/Default");
     }
 
     public void isOpened() {
-          $("#LayoutProfilePic").shouldBe(Condition.visible);
+        $("#LayoutProfilePic").shouldBe(Condition.visible);
     }
 
 

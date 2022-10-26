@@ -12,7 +12,7 @@ public class LoginPage {
         open("/login");
     }
 
-    public void isOpened(){
+    public void isOpened() {
         $(By.xpath("button[@type='submit'][contains(text(),'Login')]")).shouldBe(Condition.visible);
     }
 

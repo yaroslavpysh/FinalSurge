@@ -20,7 +20,7 @@ public class BaseTest {
 
         Configuration.baseUrl = "https://log.finalsurge.com";
         Configuration.browser = "chrome";
-        Configuration.headless = true;
+//        Configuration.headless = true;
         Configuration.timeout = 10000;
 
         loginPage = new LoginPage();
