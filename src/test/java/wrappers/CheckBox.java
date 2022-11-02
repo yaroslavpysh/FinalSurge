@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
-//label[@for='PlannedWorkout']//input[@type='checkbox']
 public class CheckBox {
 
     String labelFor;

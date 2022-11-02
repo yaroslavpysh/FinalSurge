@@ -10,7 +10,6 @@ import lombok.Data;
 
 public class Workout {
     String workoutType;
-//    String workoutSubType;
     String workoutDate;
     String workoutTime;
     String workoutName;
@@ -26,11 +25,23 @@ public class Workout {
     String isRace;
     String overallPlace;
     String ageGroupPlace;
-//    String labelForRadioButton;
     String radioButtonName;
     String perceivedEffort;
     String minHR;
     String avgHR;
     String maxHR;
     String burnedkCal;
+    String postWorkoutNotesResults;
+    String temperature;
+    String temperatureType;
+    String humidity;
+    String elevationGain;
+    String elevationGainType;
+    String elevationLoss;
+    String elevationLossType;
+    String avgPower;
+    String maxPower;
+    String avgCadence;
+    String maxCadence;
+
 }

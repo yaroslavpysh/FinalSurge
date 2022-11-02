@@ -14,7 +14,7 @@ public class TypeSelector {
     }
 
     public void select() {
-        $(By.xpath(String.format("//a[contains(text(),'%s')]", typeName))).click();
+        $(By.xpath(String.format("//a[contains(text(),'%s')][@data-code]", typeName))).click();
 
     }
 }
