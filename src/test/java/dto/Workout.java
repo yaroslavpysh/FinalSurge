@@ -7,12 +7,15 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 @Builder
-public class Workout {
 
+public class Workout {
+    String workoutType;
+//    String workoutSubType;
     String workoutDate;
     String workoutTime;
     String workoutName;
     String description;
+    String isPlannedWorkout;
     String plannedDistance;
     String plannedDistanceType;
     String plannedDuration;
@@ -20,8 +23,11 @@ public class Workout {
     String distanceType;
     String duration;
     String paceType;
+    String isRace;
     String overallPlace;
     String ageGroupPlace;
+//    String labelForRadioButton;
+    String radioButtonName;
     String perceivedEffort;
     String minHR;
     String avgHR;

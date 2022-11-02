@@ -22,6 +22,7 @@ public class BaseTest {
         Configuration.browser = "chrome";
 //        Configuration.headless = true;
         Configuration.timeout = 10000;
+        Configuration.clickViaJs = false;
 
         loginPage = new LoginPage();
         defaultPage = new DefaultPage();

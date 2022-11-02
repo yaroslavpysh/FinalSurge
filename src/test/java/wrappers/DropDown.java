@@ -17,10 +17,8 @@ public class DropDown {
     }
 
     public void select(String text) {
-        $(By.xpath(String.format("//label[text()='%s']/..//select", label))).selectOptionByValue(text);
-
-//        executeJavaScript("arguments[0].selectOptionByValue(text);",$(By.xpath(String.format
-//                ("//label[text()='%s']/..//select", label))));
+        $(By.xpath(String.format("//label[text()='%s']/..//select[not(ancestor::div[@style='display: none;'])]", label)))
+        .selectOptionByValue(text);
     }
 
 }
