@@ -44,7 +44,14 @@ public class CalendarPage {
         $(By.xpath(String.format("//div[@data-title='%s']", workout.getWorkoutName()))).dragAndDropTo($("td[data-day='4']"));
         $$(By.xpath(String.format("//div[@data-title='%s']", workout.getWorkoutName())))
                 .shouldHave(CollectionCondition.size(amountWorkoutsBeforeDragAndDrop - 1));
+    }
 
+    public void painAndInjury(Workout workout){
+        $(By.xpath(String.format("//div[@data-title='%s']", workout.getWorkoutName()))).click();
+        $(By.xpath("//div[contains(@class,'dropdown')][contains(@class,'open')]/ul/li/a[text()='Pain & Injury']"))
+                .click();
+        switchTo().frame("PainInjuryFrame").findElement(By.xpath("div[@class='dot-inner-dashed']")).click();
+        switchTo().frame("PainInjuryFrame").findElement(By.xpath("div[@id='painPointSave']")).click();
     }
 
 
