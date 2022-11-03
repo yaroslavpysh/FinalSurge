@@ -41,11 +41,5 @@ public class WorkoutTest extends BaseTest {
         Workout workoutTransition = WorkoutFactory.get("Transition");
         new WorkoutAddPage().createNewTransitionWorkout(workoutTransition);
     }
-    @Test
-    public void asd(){
-        open("https://the-internet.herokuapp.com/drag_and_drop");
-        $("#column-a").dragAndDropTo("#column-b");
-    }
-
 
 }
