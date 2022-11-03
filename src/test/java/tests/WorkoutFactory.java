@@ -4,13 +4,15 @@ import dto.Workout;
 
 public class WorkoutFactory {
 
+    private final static String WORKOUT_NAME = "Test Workout";
+
     public static Workout get(String workoutType) {
         if (workoutType.equals("Run")) {
             return Workout.builder()
                     .workoutType(workoutType)
                     .workoutDate("10/23/2022")
                     .workoutTime("06:00 AM")
-                    .workoutName("Test Workout")
+                    .workoutName(WORKOUT_NAME)
                     .description("BLABLA")
                     .plannedDuration("01:12:12")
                     .plannedDistance("10")
@@ -19,7 +21,7 @@ public class WorkoutFactory {
                     .distanceType("km")
                     .duration("01:20:00")
                     .paceType("km")
-                    .overallPlace("1")
+                    .overallPlace("10")
                     .ageGroupPlace("30")
                     .radioButtonName("Good")
                     .perceivedEffort("1")
@@ -37,7 +39,7 @@ public class WorkoutFactory {
                     .workoutType(workoutType)
                     .workoutDate("10/23/2022")
                     .workoutTime("06:00 AM")
-                    .workoutName("Test Workout")
+                    .workoutName(WORKOUT_NAME)
                     .description("BLABLA")
                     .plannedDuration("01:12:12")
                     .plannedDistance("10")
@@ -72,7 +74,7 @@ public class WorkoutFactory {
                     .workoutType("Transition")
                     .workoutDate("10/23/2022")
                     .workoutTime("06:00 AM")
-                    .workoutName("Test Workout")
+                    .workoutName(WORKOUT_NAME)
                     .description("BLABLA")
                     .plannedDuration("01:12:12")
                     .plannedDistance("10")

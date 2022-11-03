@@ -16,8 +16,8 @@ public class LoginPage {
         $(By.xpath("button[@type='submit'][contains(text(),'Login')]")).shouldBe(Condition.visible);
     }
 
-    public void login(String login, String password) {
-        $("#login_name").sendKeys(login);
+    public void login(String email, String password) {
+        $("#login_name").sendKeys(email);
         $("#login_password").sendKeys(password);
         $("button[type='submit']").click();
     }

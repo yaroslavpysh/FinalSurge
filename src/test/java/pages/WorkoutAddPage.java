@@ -32,7 +32,6 @@ public class WorkoutAddPage {
         new DropDown("Distance").select(workout.getDistanceType());
         new Input("Distance").write(workout.getDistance());
         new Input("Duration").write(workout.getDuration());
-        new Input("Duration").write(workout.getDuration());
         new DropDown("Pace").select(workout.getPaceType());
         new CheckBox("IsRace").select();
         new Input("Overall Place").write(workout.getOverallPlace());
@@ -67,7 +66,6 @@ public class WorkoutAddPage {
         new Input("Planned Distance").write(workout.getPlannedDistance());
         new DropDown("Distance").select(workout.getDistanceType());
         new Input("Distance").write(workout.getDistance());
-        new Input("Duration").write(workout.getDuration());
         new Input("Duration").write(workout.getDuration());
         new DropDown("Pace").select(workout.getPaceType());
         new DropDown("Elevation Gain").select(workout.getElevationGainType());
@@ -111,7 +109,6 @@ public class WorkoutAddPage {
         new Input("Planned Distance").write(workout.getPlannedDistance());
         new DropDown("Distance").select(workout.getDistanceType());
         new Input("Distance").write(workout.getDistance());
-        new Input("Duration").write(workout.getDuration());
         new Input("Duration").write(workout.getDuration());
         new DropDown("Pace").select(workout.getPaceType());
         new DropDown("Elevation Gain").select(workout.getElevationGainType());
