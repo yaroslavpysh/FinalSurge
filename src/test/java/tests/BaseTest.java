@@ -30,7 +30,7 @@ public class BaseTest {
         email = PropertyReader.getProperty("finalsurge.email");
         password = PropertyReader.getProperty("finalsurge.password");
         Configuration.browser = "chrome";
-        Configuration.headless = true;
+//        Configuration.headless = true;
         Configuration.timeout = 10000;
 
         loginPage = new LoginPage();
