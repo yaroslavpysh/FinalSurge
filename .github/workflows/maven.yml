@@ -28,14 +28,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-
-      env:
-
-        USERNAME: ${{ secrets.USERNAME }}
-
-        PASSWORD: ${{ secrets.PASSWORD }}
-
-      run: mvn clean test -DUSERNAME=$USERNAME -DPASSWORD=$PASSWORD
+      run: mvn clean test
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
