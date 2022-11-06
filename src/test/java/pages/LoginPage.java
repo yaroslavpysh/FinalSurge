@@ -2,8 +2,6 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
-import wrappers.Input;
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -18,8 +16,8 @@ public class LoginPage {
     }
 
     public void login(String email, String password) {
-        $("login_name").sendKeys(email);
-        $("login_password").sendKeys(password);
-         $("button[type='submit']").click();
+        $("#login_name").sendKeys(email);
+        $("#login_password").sendKeys(password);
+        $("button[type='submit']").click();
     }
 }

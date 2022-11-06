@@ -14,8 +14,8 @@ public class TextArea {
     }
 
     public void write(String text) {
-        $(By.xpath(String.format("//label[text()='%s']/..//textarea", label))).clear();
-        $(By.xpath(String.format("//label[text()='%s']/..//textarea", label))).sendKeys(text);
+        $(By.xpath(String.format("//textarea/../*[text()='%s']/following-sibling::textarea", label))).clear();
+        $(By.xpath(String.format("//textarea/../*[text()='%s']/following-sibling::textarea", label))).sendKeys(text);
     }
 
 }
