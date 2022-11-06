@@ -31,9 +31,9 @@ jobs:
 
       env:
 
-        USERNAME: ${{ finalsurge.email }}
+        USERNAME: ${{ env.finalsurge.email }}
 
-        PASSWORD: ${{ finalsurge.password }}
+        PASSWORD: ${{ env.finalsurge.password }}
 
       run: mvn clean test -Demail=$USERNAME -Dpassword=$PASSWORD
 
