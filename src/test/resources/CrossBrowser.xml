@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CrossBrowser" parallel="classes" thread-count="4">
+    <listeners>
+        <listener class-name="tests.AnnotationTransformer"/>
+        <listener class-name="tests.TestListener"/>
+    </listeners>
+    <test name="Chrome">
+        <classes><!-- Test -->
+            <class name="tests.WorkoutTest" />
+            <class name="tests.CalendarTest" />
+            <parameter name="browser" value="chrome"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="Firefox">
+        <classes>
+            <class name="tests.WorkoutTest" />
+            <class name="tests.CalendarTest" />
+            <parameter name="browser" value="firefox"/>
+        </classes>
+    </test>
+</suite>
