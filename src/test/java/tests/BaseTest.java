@@ -3,7 +3,6 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.CalendarPage;
@@ -25,10 +24,11 @@ public class BaseTest {
 
     @BeforeMethod
     public void setup() {
-
-        Configuration.baseUrl = PropertyReader.getProperty("finalsurge.url");
-        email = PropertyReader.getProperty("finalsurge.email");
-        password = PropertyReader.getProperty("finalsurge.password");
+//       System.getProperty("USERNAME",PropertyReader.getProperty("finalsurge.email"));
+//        System.getProperty("PASSWORD",PropertyReader.getProperty("finalsurge.password"));
+        Configuration.baseUrl = ("https://log.finalsurge.com");
+        email = System.getProperty("USERNAME",PropertyReader.getProperty("finalsurge.email"));
+        password = System.getProperty("PASSWORD",PropertyReader.getProperty("finalsurge.password"));
         Configuration.browser = "chrome";
 //        Configuration.headless = true;
         Configuration.timeout = 10000;

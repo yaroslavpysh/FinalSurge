@@ -6,7 +6,7 @@ import pages.WorkoutAddPage;
 
 public class WorkoutTest extends BaseTest {
 
-    @Test
+    @Test()
     public void addRunWorkout() {
         loginPage.openPage();
         loginPage.login(email, password);
