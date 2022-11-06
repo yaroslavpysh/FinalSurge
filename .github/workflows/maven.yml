@@ -31,9 +31,9 @@ jobs:
 
       env:
 
-        USERNAME: ${{ env.USERNAME }}
+        USERNAME: ${{ USERNAME }}
 
-        PASSWORD: ${{ env.PASSWORD }}
+        PASSWORD: ${{ PASSWORD }}
 
       run: mvn clean test -DUSERNAME=$USERNAME -DPASSWORD=$PASSWORD
 
