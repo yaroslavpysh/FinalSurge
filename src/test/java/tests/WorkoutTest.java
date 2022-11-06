@@ -4,12 +4,9 @@ import dto.Workout;
 import org.testng.annotations.Test;
 import pages.WorkoutAddPage;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
-
 public class WorkoutTest extends BaseTest {
 
-    @Test
+    @Test()
     public void addRunWorkout() {
         loginPage.openPage();
         loginPage.login(email, password);

@@ -10,7 +10,6 @@ public class CheckBox {
 
     public CheckBox(String labelFor) {
         this.labelFor = labelFor;
-
     }
 
     public void select() {

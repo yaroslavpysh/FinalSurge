@@ -20,4 +20,53 @@ public class CalendarTest extends BaseTest {
         calendarPage.deleteWorkout(workoutRun);
     }
 
+    @Test
+    public void updateWorkout() {
+        loginPage.openPage();
+        loginPage.login(email, password);
+        defaultPage.isOpened();
+        workoutAddPage.openPage();
+        workoutAddPage.isOpened();
+        Workout workoutRun = WorkoutFactory.get("Run");
+        new WorkoutAddPage().createNewRunWorkout(workoutRun);
+        calendarPage.openPage();
+        calendarPage.isOpened();
+        calendarPage.updateWorkout(workoutRun, "TestWorkout1");
+    }
+
+    @Test
+    public void reportPainAndInjury() {
+        loginPage.openPage();
+        loginPage.login(email, password);
+        defaultPage.isOpened();
+        workoutAddPage.openPage();
+        workoutAddPage.isOpened();
+        Workout workoutRun = WorkoutFactory.get("Run");
+        new WorkoutAddPage().createNewRunWorkout(workoutRun);
+        calendarPage.openPage();
+        calendarPage.isOpened();
+        calendarPage.painAndInjury(workoutRun);
+    }
+
+    @Test
+    public void dragAndDropWorkout() {
+        loginPage.openPage();
+        loginPage.login(email, password);
+        defaultPage.isOpened();
+        workoutAddPage.openPage();
+        workoutAddPage.isOpened();
+        Workout workoutRun = WorkoutFactory.get("Run");
+        new WorkoutAddPage().createNewRunWorkout(workoutRun);
+        calendarPage.openPage();
+        calendarPage.isOpened();
+        calendarPage.dragAndDropWorkout(workoutRun, "5", "4");
+    }
+    @Test
+    public void deleteAllWorkouts()
+    {
+        loginPage.openPage();
+        loginPage.login(email, password);
+        calendarPage.openPage();
+        calendarPage.deleteAllWorkouts();
+    }
 }

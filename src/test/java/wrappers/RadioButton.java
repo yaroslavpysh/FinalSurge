@@ -8,11 +8,8 @@ public class RadioButton {
 
     String label;
 
-
     public RadioButton(String label) {
         this.label = label;
-
-
     }
 
     public void select(String text) {

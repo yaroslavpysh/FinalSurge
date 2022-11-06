@@ -10,7 +10,6 @@ public class DropDown {
 
     public DropDown(String label) {
         this.label = label;
-
     }
 
     public void select(String text) {

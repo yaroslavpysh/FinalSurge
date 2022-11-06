@@ -15,6 +15,8 @@ public class Input {
 
     public void write(String text) {
         $(By.xpath(String.format("//label[text()='%s']/..//input[not(ancestor::div[@style='display: none;'])]", label)))
+                .clear();
+        $(By.xpath(String.format("//label[text()='%s']/..//input[not(ancestor::div[@style='display: none;'])]", label)))
                 .sendKeys(text);
     }
 }
