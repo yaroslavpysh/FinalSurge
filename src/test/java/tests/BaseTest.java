@@ -24,13 +24,11 @@ public class BaseTest {
 
     @BeforeMethod
     public void setup() {
-//       System.getProperty("USERNAME",PropertyReader.getProperty("finalsurge.email"));
-//        System.getProperty("PASSWORD",PropertyReader.getProperty("finalsurge.password"));
         Configuration.baseUrl = ("https://log.finalsurge.com");
-        email = System.getProperty("USERNAME",PropertyReader.getProperty("finalsurge.email"));
-        password = System.getProperty("PASSWORD",PropertyReader.getProperty("finalsurge.password"));
+        email = System.getProperty("EMAIL", PropertyReader.getProperty("email"));
+        password = System.getProperty("PASSWORD", PropertyReader.getProperty("password"));
         Configuration.browser = "chrome";
-//        Configuration.headless = true;
+        Configuration.headless = true;
         Configuration.timeout = 10000;
 
         loginPage = new LoginPage();

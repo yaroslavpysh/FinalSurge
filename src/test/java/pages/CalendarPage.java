@@ -75,6 +75,7 @@ public class CalendarPage {
         $(By.xpath("//input[@id='painPointSave']")).click();
         switchTo().defaultContent();
         $("div#PainInjuryModal a.close-reveal-modal").click();
+        refresh();
         $(By.xpath(String.format("//div[@data-title='%s']/div/i[contains(@class,'medical-case')]", workout.getWorkoutName()))).click();
     }
 
