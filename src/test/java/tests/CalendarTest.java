@@ -64,7 +64,7 @@ public class CalendarTest extends BaseTest {
     }
 
     @Ignore
-    @Test(priority = 1)
+    @Test(enabled = false, priority = 1)
     public void deleteAllWorkouts()
     {
         loginPage.openPage();

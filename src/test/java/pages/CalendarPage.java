@@ -78,7 +78,7 @@ public class CalendarPage {
         switchTo().defaultContent();
         $("div#PainInjuryModal a.close-reveal-modal").click();
         refresh();
-        $(By.xpath(String.format("//div[@data-title='%s']/div/i[contains(@class,'medical-case')]", workout.getWorkoutName()))).click();
+        $(By.xpath(String.format("//div[@data-title='%s']/div/i[contains(@class,'medical-case')]", workout.getWorkoutName()))).shouldBe(Condition.visible);
     }
 
     public void deleteAllWorkouts() {
