@@ -61,7 +61,7 @@ public class CalendarTest extends BaseTest {
         calendarPage.isOpened();
         calendarPage.dragAndDropWorkout(workoutRun, "6", "4");
     }
-    @Test
+    @Test(priority = 1)
     public void deleteAllWorkouts()
     {
         loginPage.openPage();
