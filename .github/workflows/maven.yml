@@ -34,7 +34,7 @@ jobs:
 
         PASSWORD: ${{ secrets.PASSWORD }}
 
-      run: mvn clean test -Demail=$USERNAME -Dpassword=$PASSWORD
+      run: mvn clean test -DEMAIL=$USERNAME -DPASSWORD=$PASSWORD
 
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
