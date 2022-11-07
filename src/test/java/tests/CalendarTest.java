@@ -2,6 +2,7 @@ package tests;
 
 import dto.Workout;
 
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import pages.WorkoutAddPage;
 
@@ -59,8 +60,10 @@ public class CalendarTest extends BaseTest {
         new WorkoutAddPage().createNewRunWorkout(workoutRun);
         calendarPage.openPage();
         calendarPage.isOpened();
-        calendarPage.dragAndDropWorkout(workoutRun, "6", "4");
+        calendarPage.dragAndDropWorkout(workoutRun, "7", "4");
     }
+
+    @Ignore
     @Test(priority = 1)
     public void deleteAllWorkouts()
     {
