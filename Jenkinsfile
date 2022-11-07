@@ -16,7 +16,7 @@ pipeline {
       stage('Testing') {
          steps {
             // Get some code from a GitHub repository
-            git branch: "${params.BRANCH}", url: 'https://github.com/dzmitryrak/AllureReporting.git'
+            git branch: "${params.BRANCH}", url: 'https://github.com/yaroslavpysh/FinalSurge.git'
 
             // Run Maven on a Unix agent.
 //             sh "mvn clean test"
