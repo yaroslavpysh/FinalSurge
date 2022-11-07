@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import dto.Workout;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -15,6 +16,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class CalendarPage {
 
+    @Step("Opening Calendar page")
     public void openPage() {
         open("/Calendar");
     }
@@ -27,6 +29,7 @@ public class CalendarPage {
 
     }
 
+    @Step("Deleting workout from Calendar")
     public void deleteWorkout(Workout workout) {
         int amountWorkoutsBeforeDelete = $$(By.xpath(String.format("//div[@data-title='%s']", workout.getWorkoutName()))).size();
         $(By.xpath(String.format("//div[@data-title='%s']", workout.getWorkoutName()))).click();
@@ -37,6 +40,7 @@ public class CalendarPage {
                 .shouldHave(CollectionCondition.size(amountWorkoutsBeforeDelete - 1));
     }
 
+    @Step("Updating workout from Calendar")
     public void updateWorkout(Workout workout, String changedWorkoutName){
         $(By.xpath(String.format("//div[@data-title='%s']", workout.getWorkoutName()))).click();
         $(By.xpath("//div[contains(@class,'dropdown')][contains(@class,'open')]/ul/li/a[text()='Update Workout']"))
@@ -46,6 +50,7 @@ public class CalendarPage {
         $(By.xpath(String.format("//div[text()='%s']", changedWorkoutName))).shouldBe(Condition.visible);
     }
 
+    @Step("Drag and drop workout from one number to another by Calendar")
     //Selenide dragAndDropTo doesn't work
     public void dragAndDropWorkout(Workout workout, String todayDataDay, String changedDataDay) {
         WebDriver driver = getWebDriver();
@@ -66,6 +71,7 @@ public class CalendarPage {
                 .shouldHave(CollectionCondition.size(amountWorkoutsBeforeDragAndDrop - 1));
     }
 
+    @Step("Adding Pain & Injury to workout by Calendar")
     public void painAndInjury(Workout workout) {
         $(By.xpath(String.format("//div[@data-title='%s']", workout.getWorkoutName()))).click();
         $(By.xpath("//div[contains(@class,'dropdown')][contains(@class,'open')]/ul/li/a[text()='Pain & Injury']"))
@@ -78,9 +84,13 @@ public class CalendarPage {
         switchTo().defaultContent();
         $("div#PainInjuryModal a.close-reveal-modal").click();
         refresh();
-        $(By.xpath(String.format("//div[@data-title='%s']/div/i[contains(@class,'medical-case')]", workout.getWorkoutName()))).click();
+        refresh();
+
+        $(By.xpath(String.format("//div[@data-title='%s']/div/i[contains(@class,'medical-case')]", workout
+                .getWorkoutName()))).shouldBe(Condition.visible);
     }
 
+    @Step("Deleting all workouts from Calendar")
     public void deleteAllWorkouts() {
         int amountWorkoutsBeforeDelete = $$(By.xpath("//div[@data-title]")).size();
         while (amountWorkoutsBeforeDelete != 0) {

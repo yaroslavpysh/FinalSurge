@@ -3,6 +3,8 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.*;
 import pages.CalendarPage;
 import pages.DefaultPage;
@@ -23,8 +25,8 @@ public class BaseTest {
     CalendarPage calendarPage;
 
     @Parameters({"browser"})
-    @BeforeMethod
-    public void setup(@Optional("chrome") String browser) {
+    @BeforeMethod(description = "Opening browser")
+    public void setup(@Optional("firefox") String browser, ITestContext testContext) {
         if(browser.equals("chrome")){
             Configuration.browser = "chrome";
         } else if(browser.equals("firefox")){
@@ -40,15 +42,16 @@ public class BaseTest {
         defaultPage = new DefaultPage();
         workoutAddPage = new WorkoutAddPage();
         calendarPage = new CalendarPage();
-
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
-
         open();
         getWebDriver().manage().window().maximize();
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
+        WebDriver driver = getWebDriver();
+        testContext.setAttribute("driver", driver);
+
 
     }
 
-    @AfterMethod(alwaysRun = true)
+    @AfterMethod(description = "Closing browser", alwaysRun = true)
     public void close() {
         if (getWebDriver() != null)
             getWebDriver().quit();

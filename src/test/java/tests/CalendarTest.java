@@ -2,10 +2,14 @@ package tests;
 
 import dto.Workout;
 
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import pages.WorkoutAddPage;
 
 public class CalendarTest extends BaseTest {
+
+    private static String TODAY_DATA_DAY= "7";
+
     @Test
     public void deleteWorkout() {
         loginPage.openPage();
@@ -59,9 +63,10 @@ public class CalendarTest extends BaseTest {
         new WorkoutAddPage().createNewRunWorkout(workoutRun);
         calendarPage.openPage();
         calendarPage.isOpened();
-        calendarPage.dragAndDropWorkout(workoutRun, "6", "4");
+        calendarPage.dragAndDropWorkout(workoutRun, TODAY_DATA_DAY, "4");
     }
-    @Test(priority = 1)
+    @Ignore
+    @Test(enabled = false, priority = 1)
     public void deleteAllWorkouts()
     {
         loginPage.openPage();

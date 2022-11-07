@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import dto.Workout;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import wrappers.*;
 
@@ -10,6 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class WorkoutAddPage {
 
+    @Step("Opening WorkoutAdd page")
     public void openPage() {
         open("/WorkoutAdd");
     }
@@ -18,6 +20,7 @@ public class WorkoutAddPage {
         $("div#noneselected").shouldBe(Condition.visible);
     }
 
+    @Step("Create new Run workout")
     public void createNewRunWorkout(Workout workout) {
         new TypeSelector(workout.getWorkoutType()).select();
         $(By.xpath("//a[text()='Hills']")).click();
@@ -53,7 +56,7 @@ public class WorkoutAddPage {
         $("a#WorkoutEditLink .dropdown-toggle").shouldBe(Condition.visible);
         $(By.xpath("//div[text()='Test Workout']")).shouldBe(Condition.visible);
     }
-
+    @Step("Create new Bike workout")
     public void createNewBikeWorkout(Workout workout) {
         new TypeSelector(workout.getWorkoutType()).select();
 //        $("#WorkoutDate").clear();
@@ -97,6 +100,7 @@ public class WorkoutAddPage {
         $(By.xpath("//div[text()='Test Workout']")).shouldBe(Condition.visible);
     }
 
+    @Step("Create new Transition workout")
     public void createNewTransitionWorkout(Workout workout) {
         new TypeSelector(workout.getWorkoutType()).select();
 //        $("#WorkoutDate").clear();
