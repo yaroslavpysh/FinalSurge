@@ -43,5 +43,6 @@ public class Workout {
     String maxPower;
     String avgCadence;
     String maxCadence;
+    String comments;
 
 }

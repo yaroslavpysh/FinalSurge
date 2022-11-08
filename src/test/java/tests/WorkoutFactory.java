@@ -10,7 +10,7 @@ public class WorkoutFactory {
         if (workoutType.equals("Run")) {
             return Workout.builder()
                     .workoutType(workoutType)
-                    .workoutDate("10/23/2022")
+                    .workoutDate("11/07/2022")
                     .workoutTime("06:00 AM")
                     .workoutName(WORKOUT_NAME)
                     .description("BLABLA")
@@ -33,11 +33,12 @@ public class WorkoutFactory {
                     .temperature("25")
                     .temperatureType("C")
                     .humidity("60")
+                    .comments("Some comments")
                     .build();
         } else if (workoutType.equals("Bike")) {
             return Workout.builder()
                     .workoutType(workoutType)
-                    .workoutDate("10/23/2022")
+                    .workoutDate("11/07/2022")
                     .workoutTime("06:00 AM")
                     .workoutName(WORKOUT_NAME)
                     .description("BLABLA")
@@ -68,11 +69,13 @@ public class WorkoutFactory {
                     .temperature("25")
                     .temperatureType("C")
                     .humidity("60")
+                    .comments("Some comments")
                     .build();
+
         } else {
             return Workout.builder()
-                    .workoutType("Transition")
-                    .workoutDate("10/23/2022")
+                    .workoutType(workoutType)
+                    .workoutDate("11/07/2022")
                     .workoutTime("06:00 AM")
                     .workoutName(WORKOUT_NAME)
                     .description("BLABLA")
@@ -101,7 +104,9 @@ public class WorkoutFactory {
                     .temperature("25")
                     .temperatureType("F")
                     .humidity("60")
+                    .comments("Some comments")
                     .build();
         }
     }
 }
+

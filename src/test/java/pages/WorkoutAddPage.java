@@ -21,8 +21,7 @@ public class WorkoutAddPage {
     public void createNewRunWorkout(Workout workout) {
         new TypeSelector(workout.getWorkoutType()).select();
         $(By.xpath("//a[text()='Hills']")).click();
-//       $("#WorkoutDate").clear();
-//       new Input("Date").write(workout.getWorkoutDate());
+        new Input("Date").write(workout.getWorkoutDate());
         new Input("Time of Day").write(workout.getWorkoutTime());
         new Input("Workout Name").write(workout.getWorkoutName());
         new TextArea("Workout Description").write(workout.getDescription());
@@ -56,8 +55,7 @@ public class WorkoutAddPage {
 
     public void createNewBikeWorkout(Workout workout) {
         new TypeSelector(workout.getWorkoutType()).select();
-//        $("#WorkoutDate").clear();
-//        new Input("Date").write(workout.getWorkoutDate());
+        new Input("Date").write(workout.getWorkoutDate());
         new Input("Time of Day").write(workout.getWorkoutTime());
         new Input("Workout Name").write(workout.getWorkoutName());
         new TextArea("Workout Description").write(workout.getDescription());
@@ -99,8 +97,7 @@ public class WorkoutAddPage {
 
     public void createNewTransitionWorkout(Workout workout) {
         new TypeSelector(workout.getWorkoutType()).select();
-//        $("#WorkoutDate").clear();
-//        new Input("Date").write(workout.getWorkoutDate());
+        new Input("Date").write(workout.getWorkoutDate());
         new Input("Time of Day").write(workout.getWorkoutTime());
         new Input("Workout Name").write(workout.getWorkoutName());
         new TextArea("Workout Description").write(workout.getDescription());

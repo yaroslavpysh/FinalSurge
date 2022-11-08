@@ -63,10 +63,23 @@ public class CalendarTest extends BaseTest {
         calendarPage.dragAndDropWorkout(workoutRun, "7", "4");
     }
 
-    @Ignore
-    @Test(enabled = false, priority = 1)
-    public void deleteAllWorkouts()
-    {
+    @Test
+    public void addCommentsToWorkout() {
+        loginPage.openPage();
+        loginPage.login(email, password);
+        defaultPage.isOpened();
+        workoutAddPage.openPage();
+        workoutAddPage.isOpened();
+        Workout workoutRun = WorkoutFactory.get("Run");
+        new WorkoutAddPage().createNewRunWorkout(workoutRun);
+        calendarPage.openPage();
+        calendarPage.isOpened();
+        calendarPage.addCommitToWorkout(workoutRun);
+    }
+
+
+    @Test(enabled = true, priority = 1)
+    public void deleteAllWorkouts() {
         loginPage.openPage();
         loginPage.login(email, password);
         calendarPage.openPage();

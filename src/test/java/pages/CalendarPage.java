@@ -81,6 +81,21 @@ public class CalendarPage {
         $(By.xpath(String.format("//div[@data-title='%s']/div/i[contains(@class,'medical-case')]", workout.getWorkoutName()))).shouldBe(Condition.visible);
     }
 
+    public void addCommitToWorkout(Workout workout){
+        $(By.xpath(String.format("//div[@data-title='%s']", workout.getWorkoutName()))).click();
+        $(By.xpath("//div[contains(@class,'dropdown')][contains(@class,'open')]/ul/li/a[text()='Comments']"))
+                .click();
+        switchTo().frame("WorkoutCommentsiFrame");
+        new TextArea("Workout Comment").write(workout.getComments());
+        $("#saveButtonComment").click();
+        $(By.xpath("//div[@class ='ch-content']")).shouldBe(Condition.exist);
+        switchTo().defaultContent();
+        $("div#WorkoutComments a.close-reveal-modal").click();
+        $(By.xpath(String.format("//div[@data-title='%s']/div/i[contains(@class,'commentsbubble')]", workout.getWorkoutName()))).shouldBe(Condition.visible);
+
+    }
+
+
     public void deleteAllWorkouts() {
         int amountWorkoutsBeforeDelete = $$(By.xpath("//div[@data-title]")).size();
         while (amountWorkoutsBeforeDelete != 0) {
@@ -93,6 +108,7 @@ public class CalendarPage {
         $$(By.xpath(("//div[@data-title]")))
                 .shouldBe(CollectionCondition.empty);
     }
+
 }
 
 

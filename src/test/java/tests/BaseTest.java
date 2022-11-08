@@ -24,7 +24,7 @@ public class BaseTest {
 
     @Parameters({"browser"})
     @BeforeMethod
-    public void setup(@Optional("chrome") String browser) {
+    public void setup(@Optional("firefox") String browser) {
         if(browser.equals("chrome")){
             Configuration.browser = "chrome";
         } else if(browser.equals("firefox")){
