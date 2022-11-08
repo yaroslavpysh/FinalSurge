@@ -68,10 +68,10 @@ public class CalendarPage {
     }
 
     public void painAndInjury(Workout workout) {
+        Configuration.clickViaJs = true;
         $(By.xpath(String.format("//div[@data-title='%s']", workout.getWorkoutName()))).click();
         $(By.xpath("//div[contains(@class,'dropdown')][contains(@class,'open')]/ul/li/a[text()='Pain & Injury']"))
                 .click();
-
         switchTo().frame("PainInjuryFrame");
         $(By.xpath("//div[@class='dot-inner-hover']")).click();
         new TextArea("Pain Notes").write(workout.getDescription());

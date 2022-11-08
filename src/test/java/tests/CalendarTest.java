@@ -35,7 +35,7 @@ public class CalendarTest extends BaseTest {
         calendarPage.updateWorkout(workoutRun, "TestWorkout1");
     }
 
-    @Test
+    @Test()
     public void reportPainAndInjury() {
         loginPage.openPage();
         loginPage.login(email, password);
@@ -82,6 +82,11 @@ public class CalendarTest extends BaseTest {
     public void deleteAllWorkouts() {
         loginPage.openPage();
         loginPage.login(email, password);
+        defaultPage.isOpened();
+        workoutAddPage.openPage();
+        workoutAddPage.isOpened();
+        Workout workoutRun = WorkoutFactory.get("Run");
+        new WorkoutAddPage().createNewRunWorkout(workoutRun);
         calendarPage.openPage();
         calendarPage.deleteAllWorkouts();
     }
