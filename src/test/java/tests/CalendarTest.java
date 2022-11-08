@@ -35,7 +35,7 @@ public class CalendarTest extends BaseTest {
         calendarPage.updateWorkout(workoutRun, "TestWorkout1");
     }
 
-    @Test
+    @Test()
     public void reportPainAndInjury() {
         loginPage.openPage();
         loginPage.login(email, password);
