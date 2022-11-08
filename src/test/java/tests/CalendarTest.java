@@ -83,6 +83,10 @@ public class CalendarTest extends BaseTest {
         loginPage.openPage();
         loginPage.login(email, password);
         defaultPage.isOpened();
+        workoutAddPage.openPage();
+        workoutAddPage.isOpened();
+        Workout workoutRun = WorkoutFactory.get("Run");
+        new WorkoutAddPage().createNewRunWorkout(workoutRun);
         calendarPage.openPage();
         calendarPage.deleteAllWorkouts();
     }
