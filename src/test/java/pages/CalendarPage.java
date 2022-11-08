@@ -72,7 +72,6 @@ public class CalendarPage {
         $(By.xpath(String.format("//div[@data-title='%s']", workout.getWorkoutName()))).click();
         $(By.xpath("//div[contains(@class,'dropdown')][contains(@class,'open')]/ul/li/a[text()='Pain & Injury']"))
                 .click();
-
         switchTo().frame("PainInjuryFrame");
         $(By.xpath("//div[@class='dot-inner-hover']")).click();
         new TextArea("Pain Notes").write(workout.getDescription());
@@ -101,7 +100,7 @@ public class CalendarPage {
 
     public void deleteAllWorkouts() {
         int amountWorkoutsBeforeDelete = $$(By.xpath("//div[@data-title]")).size();
-        if (amountWorkoutsBeforeDelete != 0) {
+        while (amountWorkoutsBeforeDelete != 0) {
             $(By.xpath("//div[@data-title]")).click();
             $(By.xpath("//div[contains(@class,'dropdown')][contains(@class,'open')]/ul/li/a[text()='Delete']"))
                     .click();

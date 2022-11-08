@@ -82,6 +82,7 @@ public class CalendarTest extends BaseTest {
     public void deleteAllWorkouts() {
         loginPage.openPage();
         loginPage.login(email, password);
+        defaultPage.isOpened();
         calendarPage.openPage();
         calendarPage.deleteAllWorkouts();
     }
