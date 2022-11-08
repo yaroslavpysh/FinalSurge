@@ -101,15 +101,13 @@ public class CalendarPage {
 
     public void deleteAllWorkouts() {
         int amountWorkoutsBeforeDelete = $$(By.xpath("//div[@data-title]")).size();
-        while (amountWorkoutsBeforeDelete != 0) {
+        if (amountWorkoutsBeforeDelete != 0) {
             $(By.xpath("//div[@data-title]")).click();
             $(By.xpath("//div[contains(@class,'dropdown')][contains(@class,'open')]/ul/li/a[text()='Delete']"))
                     .click();
             $(By.xpath("//div[@class='modal-footer']/a[text()='OK']")).click();
             amountWorkoutsBeforeDelete--;
         }
-        $$(By.xpath(("//div[@data-title]")))
-                .shouldBe(CollectionCondition.empty);
     }
 
 }
