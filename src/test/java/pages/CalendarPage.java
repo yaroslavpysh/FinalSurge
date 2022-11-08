@@ -91,6 +91,7 @@ public class CalendarPage {
         $(By.xpath("//div[@class ='ch-content']")).shouldBe(Condition.exist);
         switchTo().defaultContent();
         $("div#WorkoutComments a.close-reveal-modal").click();
+        refresh();
         $(By.xpath(String.format("//div[@data-title='%s']/div/i[contains(@class,'commentsbubble')]", workout.getWorkoutName()))).shouldBe(Condition.visible);
 
     }
