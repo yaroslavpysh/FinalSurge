@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import dto.Workout;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -82,6 +83,7 @@ public class CalendarPage {
     }
 
     public void addCommitToWorkout(Workout workout){
+        Configuration.clickViaJs = true;
         $(By.xpath(String.format("//div[@data-title='%s']", workout.getWorkoutName()))).click();
         $(By.xpath("//div[contains(@class,'dropdown')][contains(@class,'open')]/ul/li/a[text()='Comments']"))
                 .click();
@@ -106,8 +108,6 @@ public class CalendarPage {
             $(By.xpath("//div[@class='modal-footer']/a[text()='OK']")).click();
             amountWorkoutsBeforeDelete--;
         }
-        $$(By.xpath(("//div[@data-title]")))
-                .shouldBe(CollectionCondition.empty);
     }
 
 }
